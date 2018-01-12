@@ -263,7 +263,7 @@ Process to put an image on [Singularity-Hub]
 * HARRIS, RICHARD. [RIGOR MORTIS]: How Sloppy Science Creates Worthless Cures, Crushes Hope, and Wastes Billions. BASIC BOOKS, 2017.
 * FIRESTEIN, STUART. [FAILURE]: Why Science Is so Successful. Oxford University Press, 2016.
 * Todd Gamblin, Matthew P. LeGendre, Michael R. Collette, Gregory L. Lee, Adam Moody, Bronis R. de Supinski, and W. Scott Futral. [The Spack Package Manager]: Bringing Order to HPC Software Chaos. In Supercomputing 2015 (SC’15), Austin, Texas, November 15-20 2015. LLNL-CONF-669890.
-* Ivo Jimenez, Michael Sevilla, Noah Watkins, Carlos Maltzahn, Jay Lofstead, Kathryn Mohror, Andrea Arpaci-Dusseau and Remzi Arpaci-Dusseau. [The Popper Convention]: Making Reproducible Systems Evaluation Practical. In 2017 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 1561–70, 2017. https://doi.org/10.1109/IPDPSW.2017.157.
+* Ivo Jimenez, Michael Sevilla, Noah Watkins, Carlos Maltzahn, Jay Lofstead, Kathryn Mohror, Andrea Arpaci-Dusseau and Remzi Arpaci-Dusseau. The Popper Convention: Making Reproducible Systems Evaluation Practical. In 2017 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 1561–70, 2017. https://doi.org/10.1109/IPDPSW.2017.157.
 ]
 
 [An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science.]: http://journals.sagepub.com/doi/full/10.1177/1745691612462588#articleCitationDownloadContainer
@@ -271,4 +271,3 @@ Process to put an image on [Singularity-Hub]
 [RIGOR MORTIS]: http://www.worldcat.org/title/rigor-mortis-how-sloppy-science-creates-worthless-cures-crushes-hope-and-wastes-billions/oclc/958798220?referer=br&ht=edition
 [FAILURE]: http://www.worldcat.org/title/failure-why-science-is-so-successful/oclc/965392747
 [The Spack package manager]: https://www.computer.org/csdl/proceedings/sc/2015/3723/00/2807623.pdf
-[The Popper Convention]: http://falsifiable.us
