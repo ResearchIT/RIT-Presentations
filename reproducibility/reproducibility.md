@@ -1,55 +1,73 @@
 # Tools & Methods for Reproducibile Research
 
-Levi Baber : http://rit.las.iastate.edu
+<img src="images/conveyor.jpg" alt="pharmaceutical assembly line" title="" width=300 height=150/>
 
 ### Topics
 
 * Why reproducibility & replicability matter
-* Methods & Data
-* Technical considerations
+* Challenges
 * Tools and resources available to help
 * References
+
+Levi Baber : http://rit.las.iastate.edu
 
 ---
 
 # Why reproducibility and replicability matter
 
-Reproducibility:
+Definitions used in this presentation:
 
-Replicability:
+* Reproducibility: Ability to get the same numerical results with the same data and methods
+* Replicability: Ability to draw the same conclusions with similar data and methods
 
+Who cares? Funding agencies & publishers
 
-Funding agencies & publishers
 Effectiveness
 Efficiency
 
+???
+The definitions are widely debated, and not settled on.
+Using these definitions in the presentation because it's what I'm most comfortable with from prior reading.
+
 ---
 
-# Methods and Data
+# Challenges
+### Methods and Data
 
 Keeping close track of your research methods is a key
 to producing reproducibile research, but so is your data.
 
-Ideally, your published project should contain
+Ideally, your published project should contain all of the
+scripts, manual steps, dead ends, etc. produced throughout
+the course of your project that got you to your end state.
+
+Your failures are important for other people in order to move
+science forward - don't throw them away.
 
 ---
 
-# Technical considerations
+# Challenges
+### Technical considerations
 
-Creating reproducibile research
+Fully recreating a computational environment is not
+trivial, and can lead to many hours of frustration by
+researchers.  Thinking up front about how you'll share
+your research will help make it easier for you and others
+to build on in the future.
 
-Why is this so hard:
+Why is this so hard?
 * Software dependencies are complicated
 * Hardware differences
 * Numerical reproducibility (floating point errors)
 
+Consult with [ResearchIT] for help getting projects setup
+using the tools available to make this easier.
+
+[ResearchIT]: http://rit.las.iastate.edu
+
 ---
 
-# Technical considerations
-
----
-
-# Tools and resources available to help
+# Tools and resources to help
 ### Project management with [OSF]
 
 The Open Science Framework is a free and open source
@@ -73,23 +91,23 @@ For more information on how to use [OSF] at Iowa State: http://researchit.las.ia
 
 ---
 
-# Tools and resources available to help
+# Tools and resources to help
 ### Package Management with [Spack]
 
 A variety of tools are available to help make software installation
 and management easier, with different focuses (ease of use, compatibility, reproducibility, etc.)
 
 * [Spack] is the best option we've found for scientific reproducibility and ease of use
-* Research IT has contributed several hundred packages so far
+* Research IT has contributed several hundred packaghttp://languagelog.ldc.upenn.edu/nll/?p=21956es so far
 * We're currently installing a new software tree for the University based on Spack
 * You can also use [Spack] in your home directory as an easy way to install
 packages
 
 ---
-# Tools and resources available to help
+# Tools and resources to help
 ### Package Management with [Spack]
 
-[Spack] creates a package spec & hash via a dependency graph for each package based on its
+[Spack] creates a package spec & hash via a dependenhttp://languagelog.ldc.upenn.edu/nll/?p=21956cy graph for each package based on its
 dependencies and configuration options.  You can use the spec to verify installations
 on another system, or to share with colleagues attempting to reproduce your research.
 
@@ -109,7 +127,9 @@ o |  pkg-config
  /
 o  bzip2
 ```
+
 ---
+
 # Tools and resources available to help
 ### Package Management with [Spack]
 
@@ -131,87 +151,65 @@ be dependencies on external packages and libraries that may vary by system.
 [Spack]: http://spack.readthedocs.io/
 ---
 
+# Tools and resources available to help
+### Containers
+
+A container shares the kernel with the host computer, but provides
+its own filesystem and processes run in isolation.  A container can
+be thought of similarly to a virtual machine, but lighter weight and more portable.
+
+* Good tool for ease of software install & replicability
+* Portabile for moving from local compute to Xsede or elsewhere
+
+We use [Singularity] for containers on our HPC systems.  You can find containers on
+[Singularity-Hub] or build your own.  Singularity can run or build on [Docker] images.
+
+[Singularity]: http://singularity.lbl.gov
+[Singularity-Hub]: https://www.singularity-hub.org/
+[Docker]: https://www.docker.com/
+---
+
 # Tools and resources available to helpgraph & hash
 ### Containers
 
+An example Singularity recipe from https://github.com/researchit/ete3:
+```
+Bootstrap: docker
+From: fedora
+
+%environment
+    PATH=/opt/anaconda-ete3/bin:$PATH
+    export PATH
+
+%post
+    dnf -y update &&
+    dnf -y install python python-devel gcc gcc-c++ wget bzip2 findutils which qt5
+    wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
+    bash Miniconda2-latest-Linux-x86_64.sh -b -p /opt/anaconda-ete3
+    export PATH=/opt/anaconda-ete3/bin:$PATH
+    conda install -y -c etetoolkit ete3 ete_toolchain ete3_external_apps
+    unlink /opt/anaconda-ete3/lib/libstdc++.so.6
+    ln -s /opt/anaconda-ete3/lib/libstdc++.so.6.0.24 /opt/anaconda-ete3/lib/libstdc++.so.6
+
+%runscript
+ete3 "$@"
+```
 
 ---
 
 
 # References
 
+*  “[An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science.]” Perspectives on Psychological Science, vol. 7, no. 6, 2012, pp. 657–660., doi:10.1177/1745691612462588.
+* Liberman, Mark. “Language Log.” Language Log » [Replicability vs. Reproducibility — or Is It the Other Way around?], 31 Oct. 2015, languagelog.ldc.upenn.edu/nll/?p=21956.
 * HARRIS, RICHARD. [RIGOR MORTIS]: How Sloppy Science Creates Worthless Cures, Crushes Hope, and Wastes Billions. BASIC BOOKS, 2017.
 * FIRESTEIN, STUART. [FAILURE]: Why Science Is so Successful. Oxford University Press, 2016.
 * Todd Gamblin, Matthew P. LeGendre, Michael R. Collette, Gregory L. Lee, Adam Moody, Bronis R. de Supinski, and W. Scott Futral. [The Spack Package Manager]: Bringing Order to HPC Software Chaos. In Supercomputing 2015 (SC’15), Austin, Texas, November 15-20 2015. LLNL-CONF-669890.
 * Ivo Jimenez, Michael Sevilla, Noah Watkins, Carlos Maltzahn, Jay Lofstead, Kathryn Mohror, Andrea Arpaci-Dusseau and Remzi Arpaci-Dusseau. [The Popper Convention]: Making Reproducible Systems Evaluation Practical. In 2017 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 1561–70, 2017. https://doi.org/10.1109/IPDPSW.2017.157.
 
+[An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science.]: http://journals.sagepub.com/doi/full/10.1177/1745691612462588#articleCitationDownloadContainer
+[Replicability vs. Reproducibility — or Is It the Other Way around?]: http://languagelog.ldc.upenn.edu/nll/?p=21956
 [RIGOR MORTIS]: http://www.worldcat.org/title/rigor-mortis-how-sloppy-science-creates-worthless-cures-crushes-hope-and-wastes-billions/oclc/958798220?referer=br&ht=edition
 [FAILURE]: http://www.worldcat.org/title/failure-why-science-is-so-successful/oclc/965392747
 [The Spack package manager]: https://www.computer.org/csdl/proceedings/sc/2015/3723/00/2807623.pdf
 [The Popper Convention]: http://falsifiable.us
-
----
-
-# Reproducibility / Replicability
-
-* I went to several sessions on this topic
-* Tools like [Spack] and [Singularity] will make this easier for the researchers
-* Post upgrade testing - saw several tools, none of which were perfect / production ready
-  * Can we use Singularity or Spack with CI to do this testing more effectively?
-  * Purdue plans to release their [Testpilot] tool as open source
-* Some concern about cpu arch & compiler differences
-* Most concern about software stack and access to data & methods
-* [Open Science Framework] got some small mention, but more focus on [Popper]
-
-[Spack]:http://spack.readthedocs.io
-[Singularity]: http://singularity.lbl.gov/
-[Testpilot]: https://dl.acm.org/citation.cfm?doid=3152493.3152555
-
-[Popper]:http://falsifiable.us/
-
----
-
-# Containers
-
-* Lot of attention for ease of software install & replicability
-* [Docker], [Shifter], and [Charliecloud], but Singularity seems to have the most momentum
-  * [Singularity]: No daemon, runs in userland, allows for untrusted containers, seems to have best MPI support
-  * 2.4 adds support for [SCI-F] which provides better modularity
-  * Could encrypted container images help meet compliance guidelines for standards like NIST800-171 ?
-  * Future:
-      * Checkpoint restarting that will be added as a layer to the sci-f file
-      * Native Kubernetes support
-      * OSX and Windows support
-  * Nextflow which supports Docker and Singularity images looks interesting
-* Portability for people moving from local compute to Xsede or other national resources is a big benefit
-
-[Shifter]:https://github.com/NERSC/shifter
-[Charliecloud]: https://github.com/hpc/charliecloud
-[Singularity]: http://singularity.lbl.gov
-[Docker]: https://www.docker.com/
-[SCI-F]: http://containers-ftw.org/SCI-F/
-[Nextflow]: https://www.nextflow.io/
-
----
-
-# Interactivity / UX
-
-### Interactivity
-* Need for interactive jobs growing as data & visualization needs outgrow desktops
-* Setting different expectations for cluster utilization (how much science got done vs. being 90% utilized)
-* [MIT Lincoln Lab] runs independent servers for interactive use (much like BioCrunch, Speedy, etc.)
-
-### User Experience / Training / Onboarding
-* General consensus that HPC needs to be easier for new users
-* Some ideas:
-  * Paired up mentoring with experienced users
-  * [Parallware] & [HPC Sonar] to help with code parallelization
-* Developing a [HPC Carpentry] curriculum for new user training
-  * Provide some incentive for completion (badges, higher queue priority, etc.)
-* Growing demand for tools like Jupyter Notebook
-
-[Parallware]: https://www.parallware.com/
-[HPC Sonar]: http://www.hpcsonar.com/
-[HPC Carpentry]:https://github.com/hpccarpentry
-[MIT Lincoln Lab]: https://www.ll.mit.edu/about/about.html
----
