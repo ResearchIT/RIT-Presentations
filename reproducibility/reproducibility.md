@@ -171,7 +171,9 @@ its own filesystem and processes run in isolation.  A container can
 be thought of similarly to a virtual machine, but lighter weight and more portable.
 
 * Good tool for ease of software install & replicability
-* Portabile for moving from local compute to Xsede or elsewhere
+* Portable for moving from local compute to Xsede or elsewhere
+* Once your image is built, your software stack is set and documented
+* Your image is verifiable, and can easily be shared
 
 We use [Singularity] for containers on our HPC systems.  You can find containers on
 [Singularity-Hub] or build your own.  Singularity can run or build on [Docker] images.
@@ -209,7 +211,20 @@ From: fedora
 ete3 "$@"
 ```
 ]
+---
 
+# Tools and resources available to help
+### Containers
+
+* Once you've created a recipe you can build an image locally only with root privilege
+* [Singularity-Hub] provides a place for your images to be built and shared (local root not required)
+
+Process to put an image on [Singularity-Hub]
+* Make a github repo named for your project / program
+* Put your recipe in a file named Singularity
+* Login to [Singularity-Hub] with your GitHub credentials
+* Create a Collection from your Repo
+* Share your image with collaborators or use it on other systems
 ---
 
 
