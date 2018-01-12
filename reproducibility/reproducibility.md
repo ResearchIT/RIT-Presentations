@@ -107,7 +107,7 @@ packages
 # Tools and resources to help
 ### Package Management with [Spack]
 
-[Spack] creates a package spec & hash via a dependenhttp://languagelog.ldc.upenn.edu/nll/?p=21956cy graph for each package based on its
+[Spack] creates a package spec & hash via a dependency graph for each package based on its
 dependencies and configuration options.  You can use the spec to verify installations
 on another system, or to share with colleagues attempting to reproduce your research.
 
