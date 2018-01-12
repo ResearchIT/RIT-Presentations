@@ -191,7 +191,7 @@ be dependencies on external packages and libraries that may vary by system.
 ---
 
 # Tools and resources available to help
-### Containers
+### Containers with [singularity]
 
 A container shares the kernel with the host computer, but provides
 its own filesystem and processes run in isolation.  A container can
@@ -210,8 +210,8 @@ We use [Singularity] for containers on our HPC systems.  You can find containers
 [Docker]: https://www.docker.com/
 ---
 
-# Tools and resources available to help
-### Containers
+# Tools and resources to help
+### Containers with [singularity]
 
 An example Singularity recipe from https://github.com/researchit/ete3:
 .small[
@@ -240,8 +240,8 @@ ete3 "$@"
 ]
 ---
 
-# Tools and resources available to help
-### Containers
+# Tools and resources to help
+### Containers with [singularity]
 
 * Once you've created a recipe you can build an image locally only with root privilege
 * [Singularity-Hub] provides a place for your images to be built and shared (local root not required)
