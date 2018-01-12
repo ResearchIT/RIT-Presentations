@@ -21,9 +21,17 @@ Definitions used in this presentation:
 * Replicability: Ability to draw the same conclusions with similar data and methods
 
 Who cares? Funding agencies & publishers
+* It is becoming more common for funders and publishers to require
+projects to provide comprehensive data management plans, and/or to require
+compliance with a standard like Popper or use of a tool like OSF to ensure
+that data and methods are available, and the research is reproducibile.
 
-Effectiveness
-Efficiency
+Effectiveness - When less time is spent on working through the details of a prior
+study, more time can be spent on new discoveries.
+
+Efficiency - Reproducible research puts less strain on the system by
+providing enough detail for others to build on your work in the future
+with less overhead
 
 ???
 The definitions are widely debated, and not settled on.
@@ -40,6 +48,10 @@ to producing reproducibile research, but so is your data.
 Ideally, your published project should contain all of the
 scripts, manual steps, dead ends, etc. produced throughout
 the course of your project that got you to your end state.
+
+Don't run anything by hand. Everything should be a script in a
+git repo.
+Use tools like Jupyter Notebook for interactivity, and save the result in a git repo.
 
 Your failures are important for other people in order to move
 science forward - don't throw them away.
@@ -59,8 +71,9 @@ Why is this so hard?
 * Software dependencies are complicated
 * Hardware differences
 * Numerical reproducibility (floating point errors)
+* Learning git
 
-Consult with [ResearchIT] for help getting projects setup
+Consult with [ResearchIT] for help getting projects setupSingularity-Hub
 using the tools available to make this easier.
 
 [ResearchIT]: http://rit.las.iastate.edu
@@ -90,6 +103,20 @@ For more information on how to use [OSF] at Iowa State: http://researchit.las.ia
 [DOI]: https://www.doi.org/
 
 ---
+# Tools and resources to help
+### Project workflows with [Popper]
+
+Popper provides conventions and a workflow processes
+for tracking your research project.  Popper makes
+it easier to use tools like scripts, containers, and
+automated software package installation to stitch
+together your project workflow along with documentation.
+
+<img src="images/popper.png" alt="popper graph" title="" width=500 height=250/>
+
+
+[Popper]: http://falsifiable.us
+---
 
 # Tools and resources to help
 ### Package Management with [Spack]
@@ -98,7 +125,7 @@ A variety of tools are available to help make software installation
 and management easier, with different focuses (ease of use, compatibility, reproducibility, etc.)
 
 * [Spack] is the best option we've found for scientific reproducibility and ease of use
-* Research IT has contributed several hundred packaghttp://languagelog.ldc.upenn.edu/nll/?p=21956es so far
+* Research IT has contributed several hundred packages so far
 * We're currently installing a new software tree for the University based on Spack
 * You can also use [Spack] in your home directory as an easy way to install
 packages
