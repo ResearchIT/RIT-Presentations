@@ -13,13 +13,16 @@
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
+      .small * {
+        font-size: small !important;
+      }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .remark-slide-content { background-color: black; color: white; }
     </style>
   </head>
   <body>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+
     <script>
         var slideshow = remark.create({
           sourceUrl: 'reproducibility.md'

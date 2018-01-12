@@ -112,7 +112,10 @@ dependencies and configuration options.  You can use the spec to verify installa
 on another system, or to share with colleagues attempting to reproduce your research.
 
 The graph:
-```
+
+.small[
+```bash
+
 o  samtools
 |\
 | o  htslib
@@ -127,6 +130,7 @@ o |  pkg-config
  /
 o  bzip2
 ```
+]
 
 ---
 
@@ -134,7 +138,13 @@ o  bzip2
 ### Package Management with [Spack]
 
 The spec:
-```
+.small[
+```bash
+
+Input spec
+--------------------------------
+samtools
+
 Concretized
 --------------------------------
 vjstbcc  samtools@1.6%gcc@6.4.1 arch=linux-fedora25-x86_64
@@ -142,9 +152,11 @@ vjstbcc  samtools@1.6%gcc@6.4.1 arch=linux-fedora25-x86_64
 dmvuk2s          ^bzip2@1.0.6%gcc@6.4.1+shared arch=linux-fedora25-x86_64
 wpfddzd          ^xz@5.2.3%gcc@6.4.1 arch=linux-fedora25-x86_64
 ct3ya7h          ^zlib@1.2.11%gcc@6.4.1+optimize+pic+shared arch=linux-fedora25-x86_64
-ovacyo2      ^ncurses@6.0%gcc@6.4.1 patches=4110a40613b800da2b2888c352b64c75a82809d48341061e4de5861e8b28423f,f84b2708a42777aadcc7f502a261afe10ca5646a51c1ef8b5e60d2070d926b57 ~symlinks~termlib arch=linux-fedora25-x86_64graph & hash
+ovacyo2      ^ncurses@6.0%gcc@6.4.1 patches=4110a40613b800da2b2888c352b64c75a82809d48341061e4de5861e8b28423f,f84b2708a42777aadcc7f502a261afe10ca5646a51c1ef8b5e60d2070d926b57 ~symlinks~termlib arch=linux-fedora25-x86_64
 u6vweto          ^pkg-config@0.29.2%gcc@6.4.1+internal_glib arch=linux-fedora25-x86_64
 ```
+]
+
 While Spack is very good, it's not trivially reproducibile since there can
 be dependencies on external packages and libraries that may vary by system.
 
@@ -169,11 +181,13 @@ We use [Singularity] for containers on our HPC systems.  You can find containers
 [Docker]: https://www.docker.com/
 ---
 
-# Tools and resources available to helpgraph & hash
+# Tools and resources available to help
 ### Containers
 
 An example Singularity recipe from https://github.com/researchit/ete3:
-```
+.small[
+```bash
+
 Bootstrap: docker
 From: fedora
 
@@ -194,18 +208,21 @@ From: fedora
 %runscript
 ete3 "$@"
 ```
+]
 
 ---
 
 
 # References
 
+.small[
 *  “[An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science.]” Perspectives on Psychological Science, vol. 7, no. 6, 2012, pp. 657–660., doi:10.1177/1745691612462588.
 * Liberman, Mark. “Language Log.” Language Log » [Replicability vs. Reproducibility — or Is It the Other Way around?], 31 Oct. 2015, languagelog.ldc.upenn.edu/nll/?p=21956.
 * HARRIS, RICHARD. [RIGOR MORTIS]: How Sloppy Science Creates Worthless Cures, Crushes Hope, and Wastes Billions. BASIC BOOKS, 2017.
 * FIRESTEIN, STUART. [FAILURE]: Why Science Is so Successful. Oxford University Press, 2016.
 * Todd Gamblin, Matthew P. LeGendre, Michael R. Collette, Gregory L. Lee, Adam Moody, Bronis R. de Supinski, and W. Scott Futral. [The Spack Package Manager]: Bringing Order to HPC Software Chaos. In Supercomputing 2015 (SC’15), Austin, Texas, November 15-20 2015. LLNL-CONF-669890.
 * Ivo Jimenez, Michael Sevilla, Noah Watkins, Carlos Maltzahn, Jay Lofstead, Kathryn Mohror, Andrea Arpaci-Dusseau and Remzi Arpaci-Dusseau. [The Popper Convention]: Making Reproducible Systems Evaluation Practical. In 2017 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), 1561–70, 2017. https://doi.org/10.1109/IPDPSW.2017.157.
+]
 
 [An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science.]: http://journals.sagepub.com/doi/full/10.1177/1745691612462588#articleCitationDownloadContainer
 [Replicability vs. Reproducibility — or Is It the Other Way around?]: http://languagelog.ldc.upenn.edu/nll/?p=21956
