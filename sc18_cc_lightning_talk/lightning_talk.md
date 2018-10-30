@@ -21,4 +21,4 @@ a few hundred research groups.
   * Interested in further automating this
 * Research computing grid & University MRI clusters all share the same OS, modules, and methods
 
-[Link to this slide](https://researchit.github.io/RIT-Presentations/RIT-Presentations/sc18_cc_lightning_talk/index.html)
+[Link to this slide](https://researchit.github.io/RIT-Presentations/sc18_cc_lightning_talk/index.html)

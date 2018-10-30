@@ -7,3 +7,4 @@
 * [Nov 2017 SuperCompute Conference Recap](http://researchit.github.io/RIT-Presentations/sc17-recap/index.html)
 * [Jan 2018 Reproducibility](http://researchit.github.io/RIT-Presentations/reproducibility/index.html)
 * [Fall 2018 BCB Orientation](http://researchit.github.io/RIT-Presentations/BCBOrientation-Fall2018/Orientation-20180816.html)
+* [SC18 Xsede Campus Champions Lightning Talk](http://researchit.github.io/RIT-Presentations/sc18_cc_lightning_talk/index.html)
