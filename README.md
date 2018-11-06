@@ -8,3 +8,4 @@
 * [Jan 2018 Reproducibility](http://researchit.github.io/RIT-Presentations/reproducibility/index.html)
 * [Fall 2018 BCB Orientation](http://researchit.github.io/RIT-Presentations/BCBOrientation-Fall2018/Orientation-20180816.html)
 * [SC18 Xsede Campus Champions Lightning Talk](http://researchit.github.io/RIT-Presentations/sc18_cc_lightning_talk/index.html)
+* [Nov 7 2018 IT Pros: LSS](http://researchit.github.io/RIT-Presentations/20181107_itpros_lss/index.html)
