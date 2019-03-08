@@ -10,3 +10,4 @@
 * [SC18 Xsede Campus Champions Lightning Talk](http://researchit.github.io/RIT-Presentations/sc18_cc_lightning_talk/index.html)
 * [Nov 7 2018 IT Pros: LSS](http://researchit.github.io/RIT-Presentations/20181107_itpros_lss/index.html)
 * [SC18 Recap](http://researchit.github.io/RIT-Presentations/sc18-recap/index.html)
+* [March 2019 CLAM Spack](http://researchit.github.io/RIT-Presentations/20190308-clam-spack/index.html)
