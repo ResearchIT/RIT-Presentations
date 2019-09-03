@@ -167,11 +167,9 @@ Highlights:
 
 ## University Clusters
 * [Nova HPC Cluster](http://www.hpc.iastate.edu/guides/nova):
-    * Approx 100 Nodes
-    * Primarly for MPI capable software
+    * Approx 100 Nodes, primarly for MPI capable software
 * [Condo 2017 HPC Cluster](http://www.hpc.iastate.edu/guides/condo):
-    * Little over 200 Nodes
-    * Same use-case as Nova, just older
+    * Little over 200 Nodes, similar to Nova but older
 * [hpc-class](http://www.hpc.iastate.edu/guides/classroom-hpc-cluster)
     * For classes, not research
 
@@ -186,10 +184,10 @@ Highlights:
 * We use [Spack](https://researchit.las.iastate.edu/research-it-software-archive) to build our software, and sync it to hpc-class, condo, and all of our custom machines
 ```
 $ module avail
-------- /opt/rit/spack-modules/lmod/linux-rhel7-x86_64/Core ------------------------
-   abyss/2.0.2-py2-cuda9-openmpi3-o6zuizq  netlib-scalapack/2.0.2-openmpi3-sakcdle  
-   aegean/0.15.2-py2-dwjwigu               nettle/3.3-jcgc7wh                       
-   albert/4.0a_opt4-dtcanam                nnvm/20170418-ojgzdup                    
+------- /opt/rit/spack-modules/lmod/linux-rhel7-x86_64/Core --------------------
+   abyss/2.0.2-py2-cuda9-openmpi3-o6zuizq  netlib-scalapack/2.0.2-openmpi3-sakcd
+   aegean/0.15.2-py2-dwjwigu               nettle/3.3-jcgc7wh                   
+   albert/4.0a_opt4-dtcanam                nnvm/20170418-ojgzdup                
 ...
 ```
 ---
@@ -216,18 +214,6 @@ $ module avail
     * Hardware
     * Different software
     * Parallelization wrappers (e.g. gnu parallel)
-
----
-
-# Other Services
-
-* Amazon Web Services:
-  * e.g. S3 buckets to host bigwig files for gbrowse, EC2 instances for compute jobs, GPU nodes
-* Version Control:
-  * Can help you start tracking code in git, several options for hosting including on-site: http://it.las.iastate.edu/version-control
-* Backups:
-  * We can set you up with backup software to protect data on your local disk: http://it.las.iastate.edu/computer-backup
-
 ---
 
 # Tutorials
