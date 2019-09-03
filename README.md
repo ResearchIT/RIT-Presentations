@@ -11,4 +11,4 @@
 * [Nov 7 2018 IT Pros: LSS](http://researchit.github.io/RIT-Presentations/20181107_itpros_lss/index.html)
 * [SC18 Recap](http://researchit.github.io/RIT-Presentations/sc18-recap/index.html)
 * [March 2019 CLAM Spack](http://researchit.github.io/RIT-Presentations/20190308-clam-spack/index.html)
-* [Fall 2019 LAS IT Services]](http://researchit.github.io/RIT-Presentations/Fall2019-Dept-meetings/index.html)
+* [Fall 2019 LAS IT Services](http://researchit.github.io/RIT-Presentations/Fall2019-Dept-meetings/index.html)
